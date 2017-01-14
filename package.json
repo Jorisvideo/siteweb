@@ -1,0 +1,39 @@
+{
+  "name": "emilia-bot",
+  "version": "1.0.0",
+  "description": "Test site web",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jorisvideo/siteweb"
+  },
+  "bugs": {
+    "url": "https://github.com/Jorisvideo/siteweb/issues"
+  },
+  "author": "Silver Crow",
+  "license": "MIT",
+  "homepage": "https://github.com/Jorisvideo/siteweb#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.13.1",
+    "colors": "latest",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "latest",
+    "ejs": "latest",
+    "express": "^4.13.0",
+    "express-session": "^1.11.3",
+    "morgan": "^1.6.0",
+    "mysql": "^2.7.0",
+    "passport": "^0.2.2",
+    "passport-discord": "^0.1.1",
+    "passport-facebook": "latest",
+    "passport-github": "latest",
+    "passport-google-oauth": "latest",
+    "passport-local": "^1.0.0",
+    "request": "latest"
+  }
+}

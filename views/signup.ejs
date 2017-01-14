@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Inscription</title>
+		<% include ./partials/head %>
+	</head>
+	<body>
+		<% include ./partials/header %>
+		<div class="container section">
+			<div style='padding-top: 90px'>
+				<% if (message.length > 0) { %>
+				<div class="alert alert-danger"><%= message %></div>
+				<% } %>
+				<form action="/signup" method="post">
+					<div class="container">
+						<label><b>Email</b></label>
+						<input type="text"  placeholder="Email" class="form-control" name="username" required>
+						<label><b>Mot de passe</b></label>
+						<input type="password" class="form-control" placeholder="Mot de passe" name="password" required>
+						<button type="submit" class="btn btn-success" style= "width: 100%">S'inscrire</button>
+					</div>
+				</form>
+				<div>
+					<a class="btn btn-block btn-social btn-facebook" href='/auth/facebook'>
+						<span class="fa fa-facebook"></span> Connexion avec Facebook
+					</a>
+					<a class="btn btn-block btn-social btn-google" href='/auth/google'>
+						<span class="fa fa-google"></span> Connexion avec google
+					</a>
+					<a class="btn btn-block btn-social btn-github" href='/auth/github'>
+						<span class="fa fa-github"></span> Connexion avec github
+					</a>
+				</div>
+			</div>
+			<div class="container" style="background-color:#f1f1f1">
+				<a href="/" class="btn btn-info">Annulé</a>
+				<span class="psw"><a href="/login">Déja inscrit ? Cliqué ici</a></span>
+			</div>
+		</body>
+		<% include ./partials/footer %>
+		<script src="/js/a-jQuery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/js/app.js" type="text/javascript" charset="utf-8"></script>
+	</html>
+</body>
+</html>

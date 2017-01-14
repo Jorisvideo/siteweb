@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Connexion</title>
+        <% include ./partials/head %>
+    </head>
+    <body>
+        <% include ./partials/header %>
+        <div class="container section">
+            <div style='padding-top: 90px'>
+                <% if (message.length > 0) { %>
+                <div class="alert alert-danger"><%= message %></div>
+                <% } %>
+                <form action="/login" method="post">
+                    <div class="container">
+                        <label><b>Nom d'utilisateur</b></label>
+                        <input type="text" placeholder="Entrer un nom d'utilisateur" class="form-control" name="username" required>
+                        <label><b>Mot de passe</b></label>
+                        <input type="password" class="form-control" placeholder="Entrer un mot de passe" name="password" required>
+                        <button type="submit" class="btn btn-success" style= "width: 100%">Connexion</button>
+                        <input type="checkbox" class="form-control" name="remember" value="yes"> Se souvenir de moi
+                        <span class="psw"><a href="/signup">Pas encore inscrit ? Inscrivez vous !</a></span>
+                    </div>
+                    <div>
+                        <a class="btn btn-block btn-social btn-facebook" href='/auth/facebook'>
+                            <span class="fa fa-facebook"></span> Connexion avec Facebook
+                        </a>
+                        <a class="btn btn-block btn-social btn-google" href='/auth/google'>
+                            <span class="fa fa-google"></span> Connexion avec google
+                        </a>
+                        <a class="btn btn-block btn-social btn-github" href='/auth/github'>
+                            <span class="fa fa-github"></span> Connexion avec github
+                        </a>
+                        
+                    </div>
+                </div>
+                <div class="container" style="background-color:#f1f1f1">
+                    <a href="/" class="btn btn-info">Annulé</a>
+                    <span class="psw"><a href="/recover">Mot de passe perdu ?</a></span>
+                </form>
+            </div>
+        </body>
+        <% include ./partials/footer %>
+        <script src="/js/a-jQuery.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/js/app.js" type="text/javascript" charset="utf-8"></script>
+    </html>
+</body>
+</html>
