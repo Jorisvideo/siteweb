@@ -31,28 +31,25 @@ var scopes = ['identify', 'email', 'guilds', 'guilds.join'];
     // =========================================================================
     // LOCAL SIGNUP ============================================================
     // =========================================================================
-
 passport.use(new FacebookStrategy({
-        clientID: configAuth.facebookAuth.clientID,
-        clientSecret: configAuth.facebookAuth.clientSecret,
-        profileFields : ['id', 'displayName', 'name' , 'emails'],
-        callbackURL: configAuth.facebookAuth.callbackURL,
-        passReqToCallback: true
-}), function (req, accessToken, refreshToken, profile, done){
-
+    clientID: '430860707304410',
+    clientSecret: 'ab2fb9b336c839be6842246fba7c1921',
+    callbackURL: 'http://takohell.com:3000/auth/facebook/callback',
+    profileFields : ['id', 'displayName', 'name' , 'emails'],
+    passReqToCallback: true
+},
+function(req, accessToken, refreshToken, profile, done) {
+  process.nextTick(function () {
     connection.query("SELECT * FROM facebook WHERE facebook_id = ?", [profile.id], function(err, user){
-        if (err){
+     if (err){
             return done(err);
         }
         else if (user.length == 0){
-
-
             var email = profile.emails[0].value;
             var username = profile.name.givenName + ' ' + profile.name.familyName;
             var provider = "facebook";
             var token = accessToken;
-
-            connection.query("INSERT INTO facebook (name, email, username, provider, token) VALUES (?, ?, ?, ?, ?)",
+        connection.query("INSERT INTO facebook (name, email, username, provider, token) VALUES (?, ?, ?, ?, ?)",
             [name, email, username, provider], function(err){
 
                 })
@@ -64,6 +61,9 @@ passport.use(new FacebookStrategy({
 
     });
 });
+    return done(null, profile);
+  }));
+
     passport.use(
         'local-signup',
         new LocalStrategy({

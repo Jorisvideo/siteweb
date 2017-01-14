@@ -1,0 +1,81 @@
+body {
+	font-family: "Roboto", sans-serif;
+	font-size: 16px;
+	line-height: 1.5em;
+	color: #7a7a7a;
+	background: #efefef ;
+}
+*,*:after,*:before{
+  @include  box-sizing(border-box);
+}
+
+p,ul,ol,blockquote {margin-bottom: 1.5em}
+a{color: #7b7b7b; text-decoration: none;}
+h1,h2,h3,h4,h5,h6 {margin-bottom: 24px; color: #333; font-family: "Kreon", serif;}
+
+h1 {font-size: 1.5em}
+h2 {font-size: 1.325em}
+h3 {font-size: 1.25em}
+h4 {font-size: 1.125em}
+h5,h6 {font-size: 1em}
+
+ul, ol {margin-left: 15px}
+ul { list-style: circle  inside;}
+ul ul , ol ul {
+	list-style: disc;
+	margin-bottom: 0;
+}
+ol { list-style: decimal inside;}
+ol ol, ul ol {
+	list-style: decimal;
+	margin-bottom: 0;
+}
+
+strong {
+	color: #000;
+	font-weight: bold;
+}
+
+blockquote {
+	margin: 0 60px 0 45px;
+	border-left: 5px solid #df4b3d;
+	padding-left: 15px;
+	font-style: italic;
+	overflow: hidden;
+	font-family: "Kreon", serif;
+	margin-bottom: 1.5em;
+
+	& p {
+		margin-bottom: 0;
+	}
+
+	& em {
+		display: block;
+		text-align: right;
+		font-family: "PT sans", Arial, Helvetica, sans-serif;
+		font-style: normal;
+		&:before{
+			content: '_'
+		}
+	}
+}
+img {
+	&.alignleft{
+		float: left;
+		margin-left: 20px;
+	}
+	&.aligncenter{
+		display: block;
+		margin: 0 auto;
+	}
+	&.alignleft{
+		float: right;
+		margin-right: 20px;
+	}
+}
+pre {
+	padding: 15px;
+	background: rgba(#f5f5f5, 0.5);
+	overflow-y: auto;
+}
+	p { font-family: "Roboto", sans-serif ; }
